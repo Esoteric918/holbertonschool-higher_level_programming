@@ -9,7 +9,7 @@ if numargs == 0:
     print("{:d} arguments.".format(0, sys.argv[numargs]))
 
 elif numargs == 1:
-    print("{:d} arguments:".format(1))
+    print("{:d} argument:".format(1))
 
 else:
     print("{:d} arguments:".format(numargs))

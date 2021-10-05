@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Defines Square by size"""
-__size = None
+
 
 class Square:
     """ Defines size with varification """

@@ -7,7 +7,8 @@ def roman_to_int(roman_string):
         return None
     for i in range(len(roman_string)):
         if i > 0 and romValue[rome[i]] > romValue[rome[i - 1]]:
-            intVal += romValue[rome[i - 1]] - 2 * romValue[rome[i - 1]]
+            intVal += romValue[rome[i]] - \
+                2 * romValue[rome[i - 1]]
         else:
             intVal += romValue[rome[i]]
     return intVal

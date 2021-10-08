@@ -18,6 +18,14 @@ One int:
     >>> add_integer(2)
     100
 
+Float and Negative int:
+    >>> add_integer(100.3, -2)
+    98
+
+Floats:
+    >>> add_integer(2.3, 3.2)
+    5.5
+
 String input:
     >>> add_integer(4, "School")
     Traceback (most recent call last):

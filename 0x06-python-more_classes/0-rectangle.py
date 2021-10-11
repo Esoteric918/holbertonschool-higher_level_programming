@@ -7,7 +7,8 @@ Defines Class Rectangle
 class Rectangle:
     def __init__(self, width=0, height=0):
         """
-        Instantiation with optional width and height
+        __init__ method
+        Args: width (int), height (int)
         """
         self.width = width
         self.height = height

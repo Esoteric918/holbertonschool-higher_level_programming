@@ -5,11 +5,11 @@ Defines Class Rectangle
 
 
 class Rectangle:
+    """
+    Defines Rectangle by width and height
+    """
     def __init__(self, width=0, height=0):
-        """
-        __init__ method
-        Args: width (int), height (int)
-        """
+
         self.width = width
         self.height = height
 

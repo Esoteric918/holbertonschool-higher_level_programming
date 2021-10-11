@@ -24,7 +24,7 @@ Float and Negative int:
 
 Floats:
     >>> add_integer(2.3, 3.2)
-    5.5
+    5
 
 String input:
     >>> add_integer(4, "School")

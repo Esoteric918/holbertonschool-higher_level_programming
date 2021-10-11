@@ -6,10 +6,13 @@ Defines Class Rectangle
 
 class Rectangle:
     """
+    Defines Class Rectangle
+    """
+    def __init__(self, width=0, height=0):
+        """
         __init__ method
         Args: width (int), height (int)
         """
-    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 

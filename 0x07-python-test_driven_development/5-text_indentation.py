@@ -8,7 +8,11 @@ def text_indentation(text):
     if type(text) != str:
         raise TypeError("text must be a string")
     for i in text:
+        if i == " " and flag == 1:
+            continue
         if i == '.' or i == '?' or i == ":":
             print("{} {}".format(i, '\n'))
+            flag = 1
         else:
             print(i, end="")
+            flag = 0

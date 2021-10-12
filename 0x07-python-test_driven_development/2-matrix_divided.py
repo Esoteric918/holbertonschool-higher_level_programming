@@ -1,7 +1,9 @@
-#!/usr/bin/python
-""" matrix_divided divides the given matrix
-by the parameter "div", and returns the divided matrix
-"""
+#!/usr/bin/python3
+
+    """
+    matrix_divided divides the given matrix
+    by the parameter "div", and returns the divided matrix
+    """
 
 
 def matrix_divided(matrix, div):

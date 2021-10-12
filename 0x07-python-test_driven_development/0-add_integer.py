@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
 function that adds 2 integers
-
+Returns an integer: addition of a and b
 """
 
 
 def add_integer(a, b=98):
-    """ checks if type is integer if int return sum"""
     if type(a) == float or type(b) == float:
         a = int(a)
         b = int(b)

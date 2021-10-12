@@ -15,10 +15,10 @@ def matrix_divided(matrix, div):
     newMatrix = []
 
     if not isinstance(div, (int, float)):
-        raise TypeError ("div must be a number")
+        raise TypeError("div must be a number")
 
     if div == 0:
-        raise ZeroDivisionError ("division by zero")
+        raise ZeroDivisionError("division by zero")
 
     for lists in matrix:
         if len(lists) != len(matrix[0]):

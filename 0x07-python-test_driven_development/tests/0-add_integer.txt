@@ -27,10 +27,16 @@ Floats:
     5
 
 Float NaN:
-    >>> add_integer(float('NaN'))
+    >>> add_integer(float('NaN'), 0)
     Traceback (most recent call last):
     ...
     ValueError: cannot convert float NaN to integer
+
+Try infinity:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
 
 String input:
     >>> add_integer(4, "School")

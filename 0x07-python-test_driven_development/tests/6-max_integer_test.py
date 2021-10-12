@@ -18,7 +18,7 @@ class TestMaxInteger(unittest.TestCase):
     def testAlpha(self):
         self.assertEqual(max_integer(['w','z', 'a', 'd']), 'z')
 
-     def test_type(self):
+    def test_type(self):
         self.assertRaises(TypeError, max_integer((1, 2)))
 
 if __name__ == '__main__':

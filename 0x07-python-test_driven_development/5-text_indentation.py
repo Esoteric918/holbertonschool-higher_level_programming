@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
 """ Prints 2 new lines after ., ? and : """
 
 
@@ -11,7 +12,7 @@ def text_indentation(text):
         if i == " " and flag == 1:
             continue
         if i == '.' or i == '?' or i == ":":
-            print("{} {}".format(i, '\n'))
+            print("{}{}".format(i, '\n'))
             flag = 1
         else:
             print(i, end="")

@@ -1,6 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ prints a square with the character #
 """
+
 
 def print_square(size):
     """ Determins the paramaters of size
@@ -16,4 +17,4 @@ def print_square(size):
         return None
 
     for row in range(size):
-        print('#' *size)
+        print('#' * size)

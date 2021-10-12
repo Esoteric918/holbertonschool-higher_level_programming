@@ -54,7 +54,6 @@ class Rectangle:
             return 0
         perimeter = 2 * (self.width + self.height)
         return perimeter
-    print("{}{}".format(area, perimeter))
 
     def __str__(self):
         """
@@ -69,4 +68,3 @@ class Rectangle:
             if i is self.height - 2:
                 strg += "#" * self.width
         return strg
-

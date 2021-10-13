@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """inherits_form
 """
+
+
 def inherits_from(obj, a_class):
     """ Returns TRUE if form the same subclass
     """

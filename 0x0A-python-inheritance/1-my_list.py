@@ -10,6 +10,4 @@ class MyList(list):
         super().__init__()
 
     def print_sorted(self):
-        """prints self in sorted format
-        """
         print(sorted(self))

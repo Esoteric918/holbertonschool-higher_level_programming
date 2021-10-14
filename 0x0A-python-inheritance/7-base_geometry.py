@@ -7,7 +7,6 @@ class BaseGeometry:
     """Contains functions area(), integer_validator()
     """
 
-
     def area(self):
         """ raises Exception
         """
@@ -17,7 +16,7 @@ class BaseGeometry:
         """function validates value
         """
 
-        if type(value) is not int:
-            raise TypeError(name + "must be an integer")
-        if value <= 0:
-            raise ValueError(name + "must be greater than 0")
+    f type(value) is not int:
+        raise TypeError("{} must be an integer".format(name))
+    if value <= 0:
+        raise ValueError("{} must be greater than 0".format(name))

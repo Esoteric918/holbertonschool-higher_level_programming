@@ -27,4 +27,5 @@ class Student:
             return vars(self)
 
     def reload_from_json(self, json):
-        self.__dict__ = json
+        for i in json:
+        self.__dict__ = json[i]

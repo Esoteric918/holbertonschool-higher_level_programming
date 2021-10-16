@@ -28,4 +28,4 @@ class Student:
 
     def reload_from_json(self, json):
         for i in json:
-            setattr(self, json[i])
+            setattr(self, i, json)

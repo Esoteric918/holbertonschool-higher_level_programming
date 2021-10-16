@@ -4,6 +4,9 @@
 
 
 def pascal_triangle(n):
+    """not sure this works
+    """
+
     arr = [[0 for x in range(n)] for y in range(n)]
 
     for line in range(0, n):

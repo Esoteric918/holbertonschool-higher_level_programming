@@ -97,3 +97,13 @@ class Rectangle(Base):
         if not args:
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
+
+    def to_dictionary(self):
+        newDict = {}
+
+        newDict['id'] = self.id
+        newDict['width'] = self.width
+        newDict['height'] = self.height
+        newDict['x'] = self.x
+        newDict['y'] = self.__y
+        return newDict

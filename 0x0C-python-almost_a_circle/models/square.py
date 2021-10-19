@@ -39,3 +39,12 @@ class Square(Rectangle):
         if not args:
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
+
+    def to_dictionary(self):
+        newDict = {}
+
+        newDict['id'] = self.id
+        newDict['size'] = self.size
+        newDict['x'] = self.x
+        newDict['y'] = self.y
+        return newDict

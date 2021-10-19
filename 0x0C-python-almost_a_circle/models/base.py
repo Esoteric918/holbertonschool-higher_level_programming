@@ -30,8 +30,11 @@ class Base:
             raise TypeError("{} must be an integer".format(name))
         if value < 0:
             raise ValueError("{} must be >= 0".format(name))
+
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Returns JSON string representation
+        """
         newLd = []
         if list_dictionaries == None or list_dictionaries == "":
             return newLd
@@ -49,3 +52,28 @@ class Base:
             else:
                 write_file.write(cls.to_json_string(
                 [item.to_dictionary() for item in list_objs]))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns JSON strings in list
+        """
+        if json_string == None:
+            return ([""])
+        else:
+            return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        with open(cls.__name__, 'r') as readFile:
+        return json.loads(readFile.read())

@@ -58,15 +58,42 @@ class Rectangle(Base):
         self.xyValidator("y", value)
         self.__y = value
 
+    # area of the rectangle
+
     def area(self):
         area = self.__height * self.__width
         return area
 
+    # displays rectagle with '#'
+
     def display(self):
-        for col in range(self.__height):
-            for row in range(self.__width):
-                print("#", end="")
-            print()
+        for row in range(self.__y):
+            print("")
+        for row in range(self.__height):
+            print(" "*self.__x, end="")
+            print("#"*self.__width)
+
+    # Overrides string rep
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
+    # assigns an argument to each attribute
+
+    def update(self, *args, **kwargs):
+        Attr = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            if i == 0:
+                self.__dict__['id'] = args[i]
+            elif i == 1:
+                self.__width = args[i]
+            elif i == 2:
+                self.__height = args[i]
+            elif i == 3:
+                self.__x = args[i]
+            elif i == 4:
+                self.__y = args[i]
+        if not args:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)

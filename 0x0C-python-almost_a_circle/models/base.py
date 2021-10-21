@@ -75,5 +75,18 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        with open(cls.__name__, 'r') as readFile:
-        return json.loads(readFile.read())
+        lists = []
+        with open(cls.__name__ +'.json', 'r') as readFile:
+             text = readFile.read()
+
+        text = cls.from_json_string(text)
+        print('text', text)
+        for i in text:
+            print('i',i)
+
+            if type(i) == dict:
+                lists.append(cls.create(**i))
+            else:
+                lists.append(i)
+            return lists
+

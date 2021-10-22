@@ -12,7 +12,7 @@ class Base:
     __nb_objects = 0  # private class attribute
 
     def __init__(self, id=None):
-         '''Iniitialization Method'''
+        '''Iniitialization Method'''
         if id is not None:
             self.id = id
 
@@ -77,7 +77,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-         '''load geometric objects from associated csv files'''
+        '''load geometric objects from associated csv files'''
         lists = []
         with open(cls.__name__ + '.json', 'r') as readFile:
             text = readFile.read()

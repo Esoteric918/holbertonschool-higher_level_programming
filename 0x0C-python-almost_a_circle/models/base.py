@@ -12,6 +12,7 @@ class Base:
     __nb_objects = 0  # private class attribute
 
     def __init__(self, id=None):
+         '''Iniitialization Method'''
         if id is not None:
             self.id = id
 
@@ -20,12 +21,14 @@ class Base:
             self.id = Base.__nb_objects
 
     def integer_validator(self, name, value):
+        '''Value verification for width & height'''
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
     def xyValidator(self, name, value):
+        '''Value verification for x & y'''
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value < 0:
@@ -64,6 +67,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        '''instantiate a cls obj based on kwargs(**dictionary)'''
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
         elif cls.__name__ == 'Square':
@@ -73,6 +77,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+         '''load geometric objects from associated csv files'''
         lists = []
         with open(cls.__name__ + '.json', 'r') as readFile:
             text = readFile.read()

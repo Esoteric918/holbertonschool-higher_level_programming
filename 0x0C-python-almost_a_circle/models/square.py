@@ -9,23 +9,29 @@ class Square(Rectangle):
     """ Square inherits Base"""
 
     def __init__(self, size, x=0, y=0, id=None):
-
+         '''init method for square'''
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+         '''String representation of object'''
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
+        '''size getter'''
         return self.width
 
     @size.setter
     def size(self, value):
+        '''Size setter with validation, using inherited width & height'''
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        '''Updates attributes in specific order for args,
+        and with key:val pairs for kwargs
+        '''
         Attr = ['id', 'size', 'x', 'y']
         if args:
             for i in range(len(args)):
@@ -42,6 +48,7 @@ class Square(Rectangle):
                 self.__setattr__(key, value)
 
     def to_dictionary(self):
+        '''String version of JSON interpretation'''
         newDict = {}
 
         newDict['id'] = self.id

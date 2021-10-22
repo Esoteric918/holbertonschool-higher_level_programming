@@ -13,10 +13,6 @@ class Base:
 
     def __init__(self, id=None):
         '''Iniitialization Method'''
-<<<<<<< HEAD
-
-=======
->>>>>>> b33094fd21fe560731fb4da0180dd3b6ff385247
         if id is not None:
             self.id = id
 

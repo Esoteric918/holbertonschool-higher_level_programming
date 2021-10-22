@@ -60,8 +60,8 @@ class Base:
     def from_json_string(json_string):
         """Returns JSON strings in list
         """
-        if json_string is None:
-            return ([""])
+        if json_string == None:
+            return ("[]")
         else:
             return json.loads(json_string)
 

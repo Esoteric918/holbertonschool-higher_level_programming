@@ -103,7 +103,7 @@ class Rectangle(Base):
                 self.__setattr__(key, value)
 
     def to_dictionary(self):
-         '''Return dict of obj values'''
+        '''Return dict of obj values'''
         newDict = {}
 
         newDict['id'] = self.id

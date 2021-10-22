@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""base
+"""base class for geometry classes
 """
 
 import json
 
 
 class Base:
-    """Base of the other shapes
+    """Base class for classes
     """
 
     __nb_objects = 0  # private class attribute
@@ -64,8 +64,6 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set
-        """
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
         elif cls.__name__ == 'Square':

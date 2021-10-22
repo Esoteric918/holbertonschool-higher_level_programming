@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-"""rectangle
+"""rectangle inherits form Base
 """
-
-
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Inherits from Base
+    """ rectangle Inherits from Base
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -58,13 +56,9 @@ class Rectangle(Base):
         self.xyValidator("y", value)
         self.__y = value
 
-    # area of the rectangle
-
     def area(self):
         area = self.__height * self.__width
         return area
-
-    # displays rectagle with '#'
 
     def display(self):
         for row in range(self.__y):
@@ -73,13 +67,9 @@ class Rectangle(Base):
             print(" "*self.__x, end="")
             print("#"*self.__width)
 
-    # Overrides string rep
-
     def __str__(self):
         return "[Rectangle] ({}) {}/{} {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
-
-    # assigns an argument to each attribute
 
     def update(self, *args, **kwargs):
         Attr = ['id', 'width', 'height', 'x', 'y']

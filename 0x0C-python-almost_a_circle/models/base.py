@@ -78,16 +78,9 @@ class Base:
     @classmethod
     def load_from_file(cls):
         '''load geometric objects from associated csv files'''
-        lists = []
-        with open(cls.__name__ + '.json', 'r') as readFile:
-            text = readFile.read()
-
-        text = cls.from_json_string(text)
-        for i in text:
-            if type(i) == dict:
-                lists.append(cls.create(**i))
-            else:
-                lists.append(i)
-            return lists
-
-        return []
+        try:
+            with open(cls.__name__ + '.json', 'r') as readFile:
+                return [cls.create(**i)
+                        for i in cls.from_json_string(readFile.read())]
+        except:
+            return []

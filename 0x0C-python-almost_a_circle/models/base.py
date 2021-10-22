@@ -40,7 +40,7 @@ class Base:
         """
         newLd = []
         if list_dictionaries is None or list_dictionaries == "":
-            return newLd
+            return ("[]")
         else:
             newLd = json.dumps(list_dictionaries)
         return newLd
@@ -60,7 +60,7 @@ class Base:
     def from_json_string(json_string):
         """Returns JSON strings in list
         """
-        if json_string == None:
+        if json_string is None:
             return ("[]")
         else:
             return json.loads(json_string)

@@ -1,4 +1,4 @@
---
+-- creates the database hbtn_0d_usa and the table cities
 CREATE DATABASE if not EXISTS hbtn_0d_usa;
 CREATE TABLE if not EXISTS hbtn_0d_usa.cities (
     id INT AUTO_INCREMENT NOT NULL,

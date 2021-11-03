@@ -5,4 +5,4 @@ CREATE TABLE if not EXISTS hbtn_0d_usa.cities (
     name VARCHAR(256),
     PRIMARY KEY(id),
     state_id INT NOT NULL,
-    FOREIGN KEY(state_id) REFERENCES states(id));
+    FOREIGN KEY(state_id) REFERENCES hbtn_0d_usa.states(id));

@@ -1,28 +1,31 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa"""
+"""Lists all states with a name starting with N (upper N)
+    from the database hbtn_0e_0_usa
+"""
+from sys import argv
 import MySQLdb
-import sys
 
-def main(agrv):
+def main(argv):
     """func - main - args"""
-    if len(agrv) != 4:
+    if len(argv) != 4:
         print("Enter 3 arguments")
         return
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=agrv[1],
-        passwd=agrv[2],
-        db=agrv[3],
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3],
         charset="utf8")
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY state.id ASC")
 
-    for row in cur.fetchall()
+    for row in cur.fatchall():
         print(row)
+    cur.close()
     conn.close()
 
     if __name__ == "__main__":
-    import sys
-    main(sys.argv)
+        import sys
+        main(sys.argv)

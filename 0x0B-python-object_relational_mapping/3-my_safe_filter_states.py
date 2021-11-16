@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module selects specific state from a database"""
 import sys
 import MySQLdb
 

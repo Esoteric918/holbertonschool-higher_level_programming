@@ -6,7 +6,7 @@ import MySQLdb
 import sys
 
 
-def state_N(argv):
+def state_N():
     """Takes arguments argv to list from database
     Only lists with states that start with N
     Arguments:
@@ -18,8 +18,7 @@ def state_N(argv):
                            passwd=sys.argv[2], db=sys.argv[3])
 
     cur = conn.cursor()
-
-    cur.execute("SELECT * FROM states ORDER BY state.id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
     for row in cur.fetchall():
         if row[1].startswith('N'):

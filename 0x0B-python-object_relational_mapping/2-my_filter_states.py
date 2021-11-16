@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states WHERE BINARY name '{}'\
-                ORDER BY state.id ASC".format(sys.agrv[4]))
+                ORDER BY state.id ASC".format(sys.argv[4]))
 
     for row in cur.fetchall():
         print(row)

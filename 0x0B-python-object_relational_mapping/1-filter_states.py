@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Lists all states from the database hbtn_0e_0_usa that start with N"""
-
-
 import MySQLdb
 import sys
 
@@ -18,10 +16,10 @@ def state_N():
                            passwd=sys.argv[2], db=sys.argv[3])
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states\
+    WHERE name LIKE BINARY 'N%' ORDER BY states.id ASC")
 
     for row in cur.fetchall():
-        if row[1].startswith('N'):
             print(row)
     cur.close()
     conn.close()

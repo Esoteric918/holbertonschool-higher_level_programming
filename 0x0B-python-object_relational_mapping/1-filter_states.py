@@ -19,12 +19,11 @@ def state_N(argv):
 
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM states\
-                WHERE state.name LIKE 'N%'\
-                ORDER BY state.id ASC")
+    cur.execute("SELECT * FROM states ORDER BY state.id ASC")
 
     for row in cur.fetchall():
-        print("{}".format(row))
+        if row[1].startswith('N'):
+            print(row)
     cur.close()
     conn.close()
 

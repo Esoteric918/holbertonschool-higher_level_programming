@@ -4,26 +4,19 @@
 """
 
 
-import sys
-import MySQLdb
+if __name__ == "__main__":
+    import sys
+    import MySQLdb
 
-
-def main():
-    """func - main - args"""
-    if len(sys.agrv) != 5:
-        print("Enter 4 arguments")
-        return
     conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                            passwd=sys.argv[2], db=sys.argv[3])
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE state.name ='{}'\
-                .format(agrv[4]) ORDER BY state.id ASC")
+    cur.execute("SELECT * FROM states WHERE BINARY state.name ='{}'"
+                "ORDER BY state.id ASC".format(sys.agrv[4]))
 
     for row in cur.fetchall():
         print(row)
-    cur.close()
     conn.close()
 
-    if __name__ == "__main__":
-        main(sys.argv)
+

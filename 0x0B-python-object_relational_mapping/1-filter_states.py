@@ -20,7 +20,7 @@ def state_N():
     WHERE name LIKE BINARY 'N%' ORDER BY states.id ASC")
 
     for row in cur.fetchall():
-            print(row)
+        print(row)
     cur.close()
     conn.close()
 

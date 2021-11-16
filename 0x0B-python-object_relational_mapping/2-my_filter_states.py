@@ -12,8 +12,8 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], db=sys.argv[3], port=3306)
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE BINARY state.name ='{}'"
-                "ORDER BY state.id ASC".format(sys.agrv[4]))
+    cur.execute("SELECT * FROM states WHERE BINARY name '{}'\
+                ORDER BY state.id ASC".format(sys.agrv[4]))
 
     for row in cur.fetchall():
         print(row)

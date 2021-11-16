@@ -1,17 +1,13 @@
 #!/usr/bin/python3
 """Lists all states from the database hbtn_0e_0_usa that start with N"""
-import MySQLdb
-import sys
 
 
-def state_N():
-    """Takes arguments argv to list from database
-    Only lists with states that start with N
-    Arguments:
-        argv[1]: mysql username
-        argv[2]: mysql password
-        argv[3]: database name
-    """
+
+if __name__ == "__main__":
+    import MySQLdb
+    import sys
+
+    # conntecting to datebase
     conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                            passwd=sys.argv[2], db=sys.argv[3])
 
@@ -23,6 +19,3 @@ def state_N():
         print(row)
     cur.close()
     conn.close()
-
-    if __name__ == "__main__":
-        state_N()

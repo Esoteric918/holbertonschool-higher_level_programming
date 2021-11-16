@@ -2,7 +2,6 @@
 """Lists all states from the database hbtn_0e_0_usa that start with N"""
 
 
-
 if __name__ == "__main__":
     import MySQLdb
     import sys

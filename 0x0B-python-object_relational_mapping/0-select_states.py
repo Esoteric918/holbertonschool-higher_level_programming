@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Lists all states from the database hbtn_0e_0_usa"""
+
+
 import MySQLdb
 import sys
 
@@ -11,11 +13,8 @@ def get_states():
         argv[2]: mysql password
         argv[3]: database name
     """
-    conn= MySQLdb.connect(host="localhost",
-                         port=3306,
-                         user=sys.argv[1],
-                         passwd=sys.argv[2],
-                         db=sys.argv[3])
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                           passwd=sys.argv, db=sys.argv[3]),
 
     cur = conn.cursor()
 
@@ -24,6 +23,7 @@ def get_states():
         print(row)
     cur.close()
     conn.close()
+
 
 if __name__ == "__main__":
     get_states()

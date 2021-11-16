@@ -13,15 +13,12 @@ def main(agrv):
     if len(agrv) != 5:
         print("Enter 4 arguments")
         return
-    conn = MySQLdb.connect(host="localhost",
-                            port=3306,
-                            user=agrv[1],
-                            passwd=agrv[2],
-                            db=agrv[3],
-                            charset="utf8")
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                           passwd=sys.argv[2], db=sys.argv[3])
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name ='{}'.format(agrv[4]) ORDER BY state.id ASC")
+    cur.execute("SELECT * FROM states WHERE name ='{}'\
+                .format(agrv[4]) ORDER BY state.id ASC")
 
     for row in cur.fetchall():
         print(row)

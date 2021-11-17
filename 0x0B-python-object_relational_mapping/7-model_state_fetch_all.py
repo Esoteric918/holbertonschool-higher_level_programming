@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all State objects from the database"""
+"""lists all State objects from the database SQLalchemy method"""
 import sys
 import sqlalchemy
 from sqlalchemy import (create_engine)

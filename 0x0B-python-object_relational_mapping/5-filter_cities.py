@@ -14,10 +14,10 @@ def list_cities():
     """
     if len(sys.argv) == 5:
         conn = MySQLdb.connect(host="localhost",
-                             port=3306,
-                             user=sys.argv[1],
-                             passwd=sys.argv[2],
-                             db=sys.argv[3])
+                               port=3306,
+                               user=sys.argv[1],
+                               passwd=sys.argv[2],
+                               db=sys.argv[3])
 
         cur = conn.cursor()
 
@@ -27,12 +27,13 @@ def list_cities():
                     ORDER BY cities.id ASC".format(sys.argv[4]))
 
         res = []
-        for rows in cur.fetchall(:
-            res.append(i[0])
+        for rows in cur.fetchall():
+            res.append(rows[0])
         print(", ".join(res))
 
         cur.close()
         conn.close()
+
 
 if __name__ == "__main__":
     list_cities()

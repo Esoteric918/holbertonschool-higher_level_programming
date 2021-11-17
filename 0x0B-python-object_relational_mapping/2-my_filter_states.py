@@ -6,13 +6,20 @@ from sys import argv
 import MySQLdb
 
 
-if __name__ == "__main__":
+def state_N():
+    """Take arguments argv to list from database -
+    gets states that start with N
+    Arguments:
+        argv[1]: mysql username
+        argv[2]: mysql password
+        argv[3]: database name
+    """
     conn = MySQLdb.connect(host="localhost", user=argv[1],
                            passwd=argv[2], db=argv[3], port=3306)
 
     cur = conn.cursor()
     cur.execute("SELECT id, name FROM states WHERE BINARY name = '{}'\
-                ORDER BY .id ASC".format(argv[4]))
+                ORDER BY id ASC".format(argv[4]))
 
     thing = cur.fetchall()
     for row in thing:
@@ -20,3 +27,7 @@ if __name__ == "__main__":
 
     cur.close()
     conn.close()
+
+
+if __name__ == "__main__":
+    state_N

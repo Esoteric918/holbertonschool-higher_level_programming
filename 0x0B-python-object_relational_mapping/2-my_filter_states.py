@@ -20,8 +20,8 @@ def state_N():
     cur = conn.cursor()
     cur.execute("SELECT is, name FROM states WHERE BINARY name = '{}'\
                 ORDER BY .id ASC".format(argv[4]))
-
-    for row in cur.fetchall():
+    thing = cur.fetchall()
+    for row in thing:
         print(row)
     cur.close()
     conn.close()

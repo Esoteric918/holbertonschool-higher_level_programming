@@ -5,6 +5,7 @@
 from sys import argv
 import MySQLdb
 
+
 def state_N():
     """Take arguments argv to list from database -
     gets states that start with N

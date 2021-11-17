@@ -12,8 +12,9 @@ def list_cities():
         argv[2]: mysql password
         argv[3]: database name
     """
-    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                           passwd=sys.argv[2], db=sys.argv[3])
+    if len(sys.argv) == 5:
+        conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                            passwd=sys.argv[2], db=sys.argv[3])
 
     cur = conn.cursor()
     cur.execute("SELECT cities.id, cities.name, states.name \

@@ -6,14 +6,7 @@ from sys import argv
 import MySQLdb
 
 
-def state_N():
-    """Take arguments argv to list from database -
-    gets states that start with N
-    Arguments:
-        argv[1]: mysql username
-        argv[2]: mysql password
-        argv[3]: database name
-    """
+if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", user=argv[1],
                            passwd=argv[2], db=argv[3], port=3306)
 
@@ -27,7 +20,3 @@ def state_N():
 
     cur.close()
     conn.close()
-
-
-if __name__ == "__main__":
-    state_N

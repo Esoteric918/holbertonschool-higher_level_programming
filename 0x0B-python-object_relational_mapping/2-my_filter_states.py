@@ -18,11 +18,13 @@ def state_N():
                            passwd=argv[2], db=argv[3], port=3306)
 
     cur = conn.cursor()
-    cur.execute("SELECT is, name FROM states WHERE BINARY name = '{}'\
+    cur.execute("SELECT id, name FROM states WHERE BINARY name = '{}'\
                 ORDER BY .id ASC".format(argv[4]))
+
     thing = cur.fetchall()
     for row in thing:
         print(row)
+
     cur.close()
     conn.close()
 

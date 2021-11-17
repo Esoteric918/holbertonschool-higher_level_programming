@@ -2,20 +2,29 @@
 """ takes in an argument and displays all values in the
     states table of hbtn_0e_0_usa where name matches the argument.
 """
+from sys import argv
+import MySQLdb
 
-
-if __name__ == "__main__":
-    import sys
-    import MySQLdb
-
-    conn = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                           passwd=sys.argv[2], db=sys.argv[3], port=3306)
+def state_N():
+    """Take arguments argv to list from database -
+    gets states that start with N
+    Arguments:
+        argv[1]: mysql username
+        argv[2]: mysql password
+        argv[3]: database name
+    """
+    conn = MySQLdb.connect(host="localhost", user=argv[1],
+                           passwd=argv[2], db=argv[3], port=3306)
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE BINARY name '{}'\
-                ORDER BY state.id ASC".format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE BINARY name = '{}'\
+                ORDER BY state.id ASC".format(argv[4]))
 
     for row in cur.fetchall():
         print(row)
     cur.close()
     conn.close()
+
+
+if __name__ == "__main__":
+    state_N

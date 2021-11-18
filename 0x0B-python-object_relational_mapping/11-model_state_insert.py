@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     sess = Session()
 
-    addOdj = State(name = "Louisiana")
+    addOdj = State(name="Louisiana")
     sess.add(addOdj)
     sess.commit()
     print("{}".format(addOdj.id))

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """lists first State object from the database SQLalchemy method"""
 import sys
 import sqlalchemy
@@ -15,8 +16,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
 
-    s = session()
+    s = Session()
     for state in s.query(State).order_by(State.id)\
-        .filter(State.name.like('%a%')):
+            .filter(State.name.like('%a%')):
         print("{}: {}".format(state.id, state.name))
     s.close

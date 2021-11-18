@@ -20,3 +20,4 @@ if __name__ == "__main__":
     addOdj = State(name = "Louisiana")
     sess.add(addOdj)
     sess.commit()
+    print(states.id)

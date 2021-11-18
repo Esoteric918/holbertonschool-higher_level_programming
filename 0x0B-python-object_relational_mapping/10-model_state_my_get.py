@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """lists first State object from the database SQLalchemy method"""
 from sys import argv
 import sqlalchemy
@@ -23,6 +22,3 @@ if __name__ == "__main__":
     else:
         print ("Not found")
     S.close
-
-
-

@@ -20,5 +20,5 @@ if __name__ == "__main__":
     if state:
         print("{}".format(state.id))
     else:
-        print ("Not found")
+        print("Not found")
     S.close

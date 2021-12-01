@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """Error codes"""
-from urllib import error, request, parse
-from sys import argv
-import urllib
+import urllib.request
+import sys
 
 
 def errorCode():
     """Error code check"""
+    url = sys.argv[1]
+    req =urllib.request(url)
     try:
-        with request.urlopen(argv[1]) as response:
-            html = response.info()
-            print(html.decode("utf-8"))
+        with urllib.request.urlopen(sys.argv[1]) as resp:
+            print(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         print("Error code:".format(e.code))
 

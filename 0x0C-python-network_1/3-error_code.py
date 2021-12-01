@@ -9,7 +9,7 @@ def errorCode():
     url = sys.argv[1]
     req =urllib.request(url)
     try:
-        with urllib.request.urlopen(sys.argv[1]) as resp:
+        with urllib.request.urlopen(req) as resp:
             print(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         print("Error code:".format(e.code))

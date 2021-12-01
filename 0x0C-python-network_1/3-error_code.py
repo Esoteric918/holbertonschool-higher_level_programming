@@ -7,7 +7,7 @@ import sys
 def errorCode():
     """Error code check"""
     url = sys.argv[1]
-    req =urllib.request(url)
+    req =urllib.request.Request(url)
     try:
         with urllib.request.urlopen(req) as resp:
             print(resp.read().decode("utf-8"))

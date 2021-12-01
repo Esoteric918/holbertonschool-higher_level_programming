@@ -9,7 +9,7 @@ def postIt():
     """POST email"""
     em = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(em)
-    data = data.encode("utf-8")
+    data = data.encode('ascii')
     request = urllib.request.urlopen(sys.argv[1], data)
 
     with urllib.request.urlopen(request) as response:

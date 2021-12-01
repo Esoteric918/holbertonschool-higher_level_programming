@@ -6,6 +6,7 @@ import urllib
 
 
 def errorCode():
+    """Error code check"""
     try:
         with request.urlopen(argv[1]) as response:
             html = response.read()

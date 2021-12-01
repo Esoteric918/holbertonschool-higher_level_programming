@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+"""fetch URl"""
 import urllib.request
 """fetches https://intranet.hbtn.io/status"""
 
+
 def fetcher():
-    with urllib.request.urlopen('https://intranet.hbtn.io/status/') as response:
+    with urllib.request.urlopen(
+            'https://intranet.hbtn.io/status/') as response:
         html = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(html)))

@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
-export.add = function (a, b) {
+export function add (a, b) {
   return parseInt(a) + parseInt(b);
 }

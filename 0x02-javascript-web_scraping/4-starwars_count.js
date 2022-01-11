@@ -8,8 +8,8 @@ request(starWars, function (_err, res, body) {
   for (let i = 0; i < data.length; ++i) {
     for (let x = 0; x < data[i].characters.length; ++x) {
       if (data[i].characters[x] === '18') {
+        count++;
       }
-      count++;
     }
   }
   console.log(count);

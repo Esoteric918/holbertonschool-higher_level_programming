@@ -1,5 +1,5 @@
 // Jquery
 
-$('#red_header').click(function() {
+$('#red_header').click(() => {
   $('header').addClass('red')
 })

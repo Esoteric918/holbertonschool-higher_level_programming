@@ -2,7 +2,7 @@
 
 const request = require('request');
 const starWars = process.argv[2];
-request(starWars, function (_err, _res, body) {
+request(starWars, (_err, _res, body) => {
   let count = 0;
   const data = JSON.parse(body).results;
   for (let i = 0; i < data.length; ++i) {
